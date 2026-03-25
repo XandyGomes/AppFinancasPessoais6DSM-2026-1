@@ -6,11 +6,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table( name= "Usuario", schema = "financas")
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Usuario {
 
 	@Id
@@ -26,15 +32,5 @@ public class Usuario {
 	
 	@Column(name = "senha")
 	private String senha;
-	
-	
-	
-	
-	public static void main(String[] args) {
-		Usuario usuario = new Usuario();
-		usuario.setEmail("alexandre@cps.gov.br");
-		usuario.setNome("Alexandre");
-		usuario.setSenha("1234");
-	}
 	
 }
